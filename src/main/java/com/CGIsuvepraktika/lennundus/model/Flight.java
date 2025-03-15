@@ -3,6 +3,9 @@ package com.CGIsuvepraktika.lennundus.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -13,6 +16,10 @@ public class Flight {
     private double price;
     private String destination;
     private LocalDateTime departureTime;
+    private LocalTime duration;
+
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Seat> seats;
 
     public Flight(){};
 
@@ -22,10 +29,11 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Flight(double price, String destination, LocalDateTime departureTime) {
+    public Flight(double price, String destination, LocalDateTime departureTime, LocalTime duration) {
         this.price = price;
         this.destination = destination;
         this.departureTime = departureTime;
+        this.duration = duration;
     }
 
     public long getFlight_id() {
@@ -58,5 +66,21 @@ public class Flight {
 
     public void setDepartureTime(LocalDateTime departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public LocalTime getDuration() {
+        return duration;
+    }
+
+    public void setDuration(LocalTime duration) {
+        this.duration = duration;
+    }
+
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
     }
 }

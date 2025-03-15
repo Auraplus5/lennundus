@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface FlightRepo extends JpaRepository<Flight, Long> {
@@ -17,5 +17,6 @@ public interface FlightRepo extends JpaRepository<Flight, Long> {
     List<Flight> findFlightsByDepartureTime(LocalDateTime departureTime);
     @Query("SELECT f FROM Flight f WHERE f.destination =?1 AND f.departureTime =?2")
     List<Flight> findFlightsByDestinationAndDepartureTime(String destination, LocalDateTime departureTime);
-
+    @Query("SELECT f FROM Flight f WHERE f.duration =?1")
+    List<Flight> findFlightsByDuration(LocalTime duration);
 }
