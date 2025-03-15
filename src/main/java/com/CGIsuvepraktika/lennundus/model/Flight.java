@@ -2,34 +2,30 @@ package com.CGIsuvepraktika.lennundus.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table
 public class Flight {
     @Id
-    @SequenceGenerator(
-            name = "flight_sequence",
-            sequenceName = "flight_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "flight_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long flight_id;
-    private int price;
+    private double price;
     private String destination;
+    private LocalDateTime departureTime;
 
     public Flight(){};
 
-    public Flight(long flight_id, int price, String destination) {
+    public Flight(long flight_id, double price, String destination) {
         this.flight_id = flight_id;
         this.price = price;
         this.destination = destination;
     }
 
-    public Flight(int price, String destination) {
+    public Flight(double price, String destination, LocalDateTime departureTime) {
         this.price = price;
         this.destination = destination;
+        this.departureTime = departureTime;
     }
 
     public long getFlight_id() {
@@ -40,11 +36,11 @@ public class Flight {
         this.flight_id = flight_id;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -56,4 +52,11 @@ public class Flight {
         this.destination = destination;
     }
 
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
 }
