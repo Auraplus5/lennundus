@@ -39,3 +39,6 @@
 
 <h2>Additional notes</h2>
 <p>CORS Handling: If you're accessing the backend from a different port, you may need to configure CORS on the Spring Boot backend.</p>
+<p>Time it took for the project was about 24-30 hours</p>
+<p>I had some difficulties on creating the databases. Initially I wanted to create two seperate databases but eventually I figured out that was not a good idea. I created 2 seperate tables instead which allowed me to store flight data and seat data</p>
+<p>Had to read a lot of documentation for Vue.js because I needed to remind myself on how Vue worked, which took a lot of time. I have to learn docker, because I haven't used that application and I think it would be of great benefit to learn how to use it.</p>
