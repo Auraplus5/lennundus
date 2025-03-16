@@ -12,7 +12,7 @@
 </ul>
 
 <h3>Running the frontend</h3>
-<p>After installing the dependencies, run the following command to start the development server</p> <code>npm run serve</code><p></p><p>Open a browser and visit http://localhost:8080 to see the app running.</p>
+<p>After installing the dependencies, make sure you are in the frontend directory, run the following command to start the development server</p> <code>npm run serve</code><p></p><p>Open a browser and visit http://localhost:8080 to see the app running.</p>
 <h3>Vue components</h3>
 <ul>
   <li>Flight List Component (FlightList.vue): Displays a list of available flights. Users can filter by destination,departure date, etc.</li>
