@@ -68,4 +68,8 @@ public class FlightService {
     public List<Flight> getFlightByDuration(LocalTime duration) {
         return flightRepo.findFlightsByDuration(duration);
     }
+
+    public List<Flight> getAllFlights() {
+        return flightRepo.findAll();
+    }
 }

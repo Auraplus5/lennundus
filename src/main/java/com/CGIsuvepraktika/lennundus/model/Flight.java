@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,12 +23,6 @@ public class Flight {
     private List<Seat> seats;
 
     public Flight(){};
-
-    public Flight(long flight_id, double price, String destination) {
-        this.flight_id = flight_id;
-        this.price = price;
-        this.destination = destination;
-    }
 
     public Flight(double price, String destination, LocalDateTime departureTime, LocalTime duration) {
         this.price = price;
